@@ -18,7 +18,7 @@ Route::name('admin.')->prefix('admin')->group(function () {
         return view('admin.dashboard.dashboard');
     })->name('dashboard');
 
-    Route::get('/products', function(){
+    Route::get('/product', function(){
         return view('admin.product.index');
     })->name('product');
 });
