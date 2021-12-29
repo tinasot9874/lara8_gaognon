@@ -15,10 +15,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::name('admin.')->prefix('admin')->group(function () {
     Route::get('/', function () {
-
-        return view('admin.dashboard');
-
+        return view('admin.dashboard.dashboard');
     })->name('dashboard');
+
+    Route::get('/products', function(){
+        return view('admin.product.index');
+    })->name('product');
 });
 
 
