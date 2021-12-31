@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,6 +21,7 @@ Route::name('admin.')->prefix('admin')->group(function () {
     })->name('dashboard');
 
     Route::resource('products', ProductController::class);
+    Route::resource('categories', CategoryController::class);
 });
 
 
