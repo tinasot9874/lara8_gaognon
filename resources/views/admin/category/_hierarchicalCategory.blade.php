@@ -81,5 +81,5 @@
     </tr>
     @if(count($child->childs))
         @include('admin.category._hierarchicalCategory',['childs' => $child->childs, 'time' => $count += 1])
-
+    @endif
 @endforeach

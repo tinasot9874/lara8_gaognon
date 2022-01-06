@@ -173,8 +173,6 @@
                                     </tr>
                                     @if(count($category->childs))
                                         @include('admin.category._hierarchicalCategory',['childs' => $category->childs, 'count' => $time += 1])
-                                    @elseif(count($category->childs) == 0)
-                                        $time = 1;
                                     @endif
                                 @endforeach
                                 <!--end::Table row-->
