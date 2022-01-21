@@ -16,8 +16,8 @@ class ProductFactory extends Factory
         return [
             'name' => $this->faker->unique()->numerify('Product-#'),
             'category_id' => $this->faker->numberBetween(1,5),
-            'excerpt' => $this->faker->paragraph(),
-            'desc' => $this->faker->paragraphs(2, true),
+            'shortdesc' => $this->faker->paragraph(),
+            'longdesc' => $this->faker->paragraphs(2, true),
             'tags'  => $this->faker->word(),
             'slug' => $this->faker->unique()->numerify('product-#'),
             'thumbnail' => $this->faker->numerify('assets/media/stock/ecommerce/#.gif'),

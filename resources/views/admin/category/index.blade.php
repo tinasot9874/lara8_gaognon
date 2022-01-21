@@ -90,7 +90,7 @@
                                 <!--begin::Table row-->
                                 @foreach ($categories as $category)
 
-                                    {{-- $time = 0 --}}
+
                                     <tr>
                                         <!--begin::Checkbox-->
                                         <td>
@@ -130,8 +130,8 @@
                                         <td>
                                             <!--begin::Badges-->
                                             <label class="form-check form-switch form-check-custom form-check-solid">
-                                                <input class="form-check-input" type="checkbox" value="" checked="checked">
-                                                <span class="form-check-label text-muted">Display</span>
+                                                <input class="form-check-input" type="checkbox" value="" @if($category->isDisplay) checked @endif>
+                                                <span class="form-check-label text-muted">{{isDisplay($category->isDisplay)}}</span>
                                             </label>
                                             <!--end::Badges-->
                                         </td>
@@ -172,7 +172,7 @@
                                         <!--end::Action=-->
                                     </tr>
                                     @if(count($category->childs))
-                                        @include('admin.category._hierarchicalCategory',['childs' => $category->childs, 'count' => $time += 1])
+                                        @include('admin.category._hierarchicalCategory',['childs' => $category->childs])
                                     @endif
                                 @endforeach
                                 <!--end::Table row-->

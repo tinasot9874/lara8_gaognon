@@ -19,6 +19,7 @@ class CategoriesTableSeeder extends Seeder
             'slug'         => 'computer',
             'desc'         => 'Our computers and tablets include all the big brands.',
             'image'        => 'assets/media/stock/ecommerce/68.gif',
+            'isDisplay'    => false,
         ]);
         DB::table('categories')->insert([
             'name'         => 'Watches',

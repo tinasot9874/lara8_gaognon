@@ -18,8 +18,8 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->foreignId('category_id')->constrained('categories');
             $table->string('slug')->unique();
-            $table->text('excerpt')->nullable();
-            $table->text('desc')->nullable();
+            $table->text('shortdesc')->nullable();
+            $table->text('longdesc')->nullable();
             $table->string('thumbnail');
             $table->string('sku')->unique()->nullable();
             $table->decimal('price');
