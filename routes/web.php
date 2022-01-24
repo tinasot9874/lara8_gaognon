@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\Admin\StoreSettingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,9 +20,14 @@ Route::name('admin.')->prefix('admin')->group(function () {
     Route::get('/', function () {
         return view('admin.dashboard.dashboard');
     })->name('dashboard');
-
     Route::resource('products', ProductController::class);
     Route::resource('categories', CategoryController::class);
+
+    // Group router [Setting] start
+    Route::name('setting.')->prefix('setting')->group(function (){
+        Route::get('/general', [StoreSettingController::class, 'general'])->name('general');
+    });
+
 });
 
 

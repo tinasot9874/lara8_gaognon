@@ -15,6 +15,8 @@ class CreateStoreSettingsTable extends Migration
     {
         Schema::create('store_settings', function (Blueprint $table) {
             $table->id();
+            $table->string("option_name");
+            $table->string("option_value");
             $table->timestamps();
         });
     }
