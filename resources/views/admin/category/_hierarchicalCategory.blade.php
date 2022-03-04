@@ -21,7 +21,7 @@
                     <!--begin::Title-->
                     <a href="{{ route('admin.categories.edit', $child->slug) }}"
                        class="text-gray-800 text-hover-primary fs-5 fw-bolder mb-1"
-                       data-kt-ecommerce-category-filter="category_name">{{ $child->name }}
+                       data-kt-ecommerce-category-filter="category_name"> {!! $char !!} {{ $child->name }}
                         <small style="padding: 2px"
                                class="badge-light-success"><a href="{{route('admin.products.index', $child->slug)}}">{{ count($child->products) }} products</a>
                         </small>
@@ -80,6 +80,6 @@
         <!--end::Action=-->
     </tr>
     @if(count($child->childs))
-        @include('admin.category._hierarchicalCategory',['childs' => $child->childs])
+        @include('admin.category._hierarchicalCategory',['childs' => $child->childs, 'char' => $char.'&#8213'])
     @endif
 @endforeach

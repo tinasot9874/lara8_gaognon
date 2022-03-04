@@ -16,9 +16,10 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::with('childs')->get()->where('parent_id', '=', 0);
-        //dd($categories);
+
         return view('admin.category.index',[
-            'categories' => $categories
+            'categories' => $categories,
+            'char'      => '',
         ]);
     }
 

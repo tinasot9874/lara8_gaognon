@@ -89,8 +89,6 @@
                             <tbody class="fw-bold text-gray-600">
                                 <!--begin::Table row-->
                                 @foreach ($categories as $category)
-
-
                                     <tr>
                                         <!--begin::Checkbox-->
                                         <td>
@@ -113,7 +111,7 @@
                                                     <!--begin::Title-->
                                                     <a href="{{ route('admin.categories.edit', $category->slug) }}"
                                                         class="text-gray-800 text-hover-primary fs-5 fw-bolder mb-1"
-                                                        data-kt-ecommerce-category-filter="category_name">{{ $category->name }} {{ $time = 0 }}
+                                                        data-kt-ecommerce-category-filter="category_name">{{ $category->name }}
                                                         <small style="padding: 2px"
                                                             class="badge-light-success"><a href="{{route('admin.products.index', $category->slug)}}">{{ count($category->products) }} products</a>
                                                             </small>
@@ -172,7 +170,8 @@
                                         <!--end::Action=-->
                                     </tr>
                                     @if(count($category->childs))
-                                        @include('admin.category._hierarchicalCategory',['childs' => $category->childs])
+
+                                        @include('admin.category._hierarchicalCategory',['childs' => $category->childs, 'char' => '&#8213'])
                                     @endif
                                 @endforeach
                                 <!--end::Table row-->
